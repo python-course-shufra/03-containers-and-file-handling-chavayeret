@@ -3,18 +3,28 @@ import random
 
 
 def main():
-    # TODO: your code here
-
-    # 1. Get the command line arguments via sys.argv
-
-    # 2. Open the correct file open(rf'questions\<filename>.txt)'
-
-    # 3. Iterate over the file
-
-    #       3.1. Parse the line (use s.split())
-    #       3.2 Create a list of options
-    #       3.3 random.shuffle(l)
-    pass
+     print(sys.argv[1])
+    mikz=sys.argv[1:]
+    num=sys.argv[2:]
+    def quiz(mikz,num):
+        with open(rf'question\{mikz}.txt', mode="r")as ques:
+            for line in ques:
+                l=random(line)
+            l.strip()
+            quest,rait,no1,no2,no3=l.split()
+            questi=[rait,no1,no2,no3]
+            questi1=list(random.shuffle(questi))
+            print(quest)
+            for i in enumerate(questi1):
+                print(f'\n.join({questi1[i]})')
+            print('select the correct answer: ')
+            answer=sys.argv[1:]
+            answers=[]
+            if questi1[answer]==rait:
+                answers[answer]='1'
+        return sum(list(map(quiz,num)))
+        if __name__ == '__main__':
+             main()
 
 
 if __name__ == '__main__':
